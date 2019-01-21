@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Merriweather|Montserrat:100');
+    @import url('https://fonts.googleapis.com/css?family=Arvo|Open+Sans');
+    * {
+    margin: 0;
+    padding: 0;
+    }
+    body {
+    font-family: 'Open Sans', sans-serif;
+    }
+    header {  
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    top: 0;
+    padding: 0px 20px;
+    background: white;
+    }
+    #nav-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    vertical-align: middle;
+    }
+    h1 {
+    margin: auto 10px;  
+    font-family: 'Arvo', serif;
+    }
+    h2 {
+    width: 100%;
+    margin: auto;
+    font-family: 'Arvo', serif;
+    text-align: center;
+    }
+    #header-img {
+    height: auto;
+    margin: auto -10px;
+    max-height: 55px;
+    max-width: 110px;
+    min-height: 40px;
+    min-width: 100px;
+    margin-top: 5px;
+    }
+    nav {
+    width: 100%;
+    }
+    nav ol {  
+    display: flex;
+    list-style-type: none;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 20px 30px;
+    margin-left: auto;
+    }
+    .nav-link {
+    margin: 0;
+    white-space: nowrap;
+    }
+    li a:link,li a:visited {
+    padding: 15px 20px;
+    text-decoration: none;
+    color: grey;
+    }
+    li a:hover,li a:active {
+    color: white;
+    background-color: lightblue;
+    transition: 1s;
+    }
+    .container {/*
+    margin: 5%;
+    background: #4286f4;
+    border-radius: 10px;*/
+    }
+    section {/*
+    margin: 0 10%;
+    padding: 3%;
+    background: #ccdfff;
+    border-radius: 10px;*/
+    }
+    .anchor{
+    display: block;
+    height: 63px; /*same height as header*/
+    /*margin-top: px; /*same height as header*/
+    visibility: hidden;
+    }
+    p {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: left;
+    margin: 0 10%;
+    line-height: 1.6em;
+    font-size: 16px;
+    }
+    #fmfrender {
+    margin: 10px auto;
+    border-radius: 5px;
+    max-width: 100%;
+    }
+    #que, #como, #contacto {
+    background: lightblue;
+    width: 80%;
+    border-radius: 5px;
+    margin: 10px auto;
+    }
+    #p1, #p2, #p3, #p4 {/*
+    width: 100%;
+    */}
+    .videoWrapper {
+    display: flex;
+    margin: auto;  
+    width: 80%;
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    }
+    .videoWrapper iframe {
+    display: flex;
+    position: absolute;
+    z-index: 0;
+    max-width: 100%;
+    max-height: 100%;
+    }
+    input[type="email"] {
+    display: flex;
+    max-width: 275px;
+    width: 100%;
+    padding: 5px;
+    margin: 10px auto;
+    }
+    input[type="submit"] {
+    display: block;
+    max-width: 150px;
+    width: 100%;
+    height: 44px;
+    margin: auto;
+    border: 0;
+    background-color: lightblue;
+    border-radius: 5px;
+    margin-bottom: 40px;  
+    &:hover {
+    color: white;
+    background-color: #9bc2cf;
+    transition: 1s;
+    }
+    }
+    #textarea {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10%;
+    max-width: 80%;
+    }
+    #email {
+    display: flex;
+    margin-top: 20px;
+    margin-left: 10%;  
+    }
+    #submit, .g-recaptcha {
+    margin-top: 20px;
+    margin-left: 10%;  
+    }
+    footer {  
+    display: block;  
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    }
+    @media (max-width: 1000px)   {
+    header {
+    top: 0;
+    padding: 5px 20px;
+    }
+    #nav-bar {
+    margin: auto -20px;
+    flex-wrap: wrap;    
+    justify-content: center;
+    }
+    h1 {
+    white-space: nowrap;
+    }
+    nav ol {
+    margin: 5px auto;
+    }
+    .anchor {    
+    height: 140px; /*same height as header*/
+    /*margin-top: -80px; /*same height as header*/
+    visibility: hidden;
+    }
+    }
+    @media screen and (max-width: 600px) {
+    .anchor {    
+    height: 160px; /*same height as header*/
+    /*margin-top: -80px; /*same height as header*/
+    visibility: hidden;
+    }  
+    }
+  </style>
+  <head>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+  </head>
+  <header id="header">
+    <nav id="nav-bar">
+      <img id="header-img" src="https://lh3.googleusercontent.com/O_ljgL4YALnLxPPQYjk63cEUcb23rpxuVXk_jspu6QxRSjuEUxLyUx69g7GlOmReLLHlDLCKa46rx06qxwaC6Cbud8ckZsbs8SCagyZuQcPXGzVY563Gd2AiW3HUVvHNQC3TIePS=w1920-h1080" alt="Logo FMF">
+      <h1 id="title">Sistema Compresor Dinámico FMF®</h1>
+      <ol>
+        <li class="nav-link">
+          <a href="#a_que">¿Qué es?</a>
+        </li>
+        <li class="nav-link">
+          <a href="#a_como">¿Cómo funciona?</a>
+        </li>
+        <li class="nav-link">
+          <a href="#a_contacto">Contáctenos</a>        
+        </li>
+      </ol>
+    </nav>
+  </header>
+  <div class="container">
+    <span class="anchor" id="a_que"></span>
+    <section class="que_container">
+      <h2 id="que">¿Qué es?</h2>
+      <p id="p1">
+        <img id="fmfrender" src="https://lh3.googleusercontent.com/Si55Nz_Drf3uazGWbI3hEeCjnnyvq8bjYQVNFcpMNcW6CBjmzFcaCh8jMAYjva1SJDK1DvNSDWYX8N2TaJvXkD7YNt-J0z2l6J3Qfg7zbjIg2_zmHW76JBn6VFklVprDSc4kENObxQ=w1920-h1080" alt="Imagen FMF">
+        El Sistema Compresor Dinámico FMF® es un equipo específicamente diseñado para los pacientes con malformaciones de la pared torácica, el cual actúa corrigiendo gradualmente las asimetrías.<br>
+        Está confeccionado en aluminio de aleación ultraliviana y posee una placa metálica adaptada a la protrusión, un punto de apoyo posterior y un sistema que permite medir presiones.<br>    
+      </p>
+    </section>
+    <span class="anchor" id="a_como"></span>
+    <section class="">
+      <h2 id="como">¿Cómo funciona?</h2>
+      <p id="p2">Mediante un medidor de presión de corrección en PSI (Libras por pulgadas cuadradas), se determina la fuerza necesaria para corregir el Pectus Carinatum.<br>
+        El uso de una presión de tratamiento controlada resulta fundamental para evitar la sobrecorrección y la lesión de la piel. De esta manera se obtiene, además, una mejor tolerancia al tratamiento.<br>
+        El Sistema FMF® actúa en forma dinámica y requiere ajuste de presiones periódicos en la medida que el tórax se corrige.
+        Además, a medida que la malformación es corregida, también se modifica el diámetro del tórax (se produce un ensanchamiento). Por este motivo, todo el compresor debe ser modificado periódicamente.
+        El porcentaje de éxito con el uso del compresor es cercano al 90%.
+        El uso del Sistema FMF® evita en la mayoría de los casos la indicación de una toracoplastia quirúrgica de gran envergadura.<br>
+        El novedoso Sistema Compresor Dinámico, presentado por primera vez en los Estados Unidos. Nota cubierta por Fox News:
+      </p>
+      <p class="videoWrapper">
+        <iframe id="video" width="800" height="600" src="https://www.youtube.com/embed/OJnkFMS2_7U?rel=0&amp;showinfo=0" frameborder="0" allow="accelerometer" allowfullscreen></iframe>    
+      </p>
+    </section>
+    <span class="anchor" id="a_contacto"></span>
+    <section class="">
+      <h2 id="contacto">Contáctenos</h2>
+      <p id="p4">Para más información sobre el Sistema Compresor Dinámico FMF®, envíenos un mensaje junto con su dirección de email y nos pondremos en contacto a la brevedad.
+      <form id="form" action="https://www.freecodecamp.com/email-submit">
+        <textarea form="form" id="textarea" rows="10" cols="200" placeholder="Escriba su mensaje aquí..."></textarea>
+        <input name="email" id="email" type="email" placeholder="Ingrese su dirección de e-mail" required/>
+        <div class="g-recaptcha" data-sitekey="6Ley4n4UAAAAAJjacNK-L8_zrRZoxDdkHKEKM1B9"></div>
+        <input id="submit" type="submit" value="ENVIAR" class="btn"></input>
+      </form>
+      </p>
+    </section>
+  </div>
+  <hr>
+  <footer>
+    <span>Written and coded by <a id="credits" href="https://github.com/LeoSchy" target="_blank"> Leonardo Schymansky</a>.
+    </span>
+  </footer>
+</html>
